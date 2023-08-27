@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+https://www.youtube.com/watch?v=MzO-0IYkZMU&t=325s
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Здесь храню все записи по темам telegram_bot, git, ssh
 
-## Available Scripts
+Для установки react-app пришлось обновить версию node и npm:
+https://slicks.name/web-dev/update-node-npm-versions-on-linux-or-mac.html
+а затем выполнить: sudo chown -R 501:20 "/Users/evgeniimoseikin/.npm"
+После этого уже: npx create-react-app .
+nodemon не устанавливаю, т.к. в terminuse перезагрузка происходит автоматически при любом изменении
+Далее: https://www.npmjs.com/package/node-telegram-bot-api
+BotFather
+test_mevnik
+name: TestMevnikBot
+token:__________________
 
-In the project directory, you can run:
+Попытки запустить new TelegramBot(token, {polling: true}) из react-app не удались. Явно не стыкуются версии react, webpack и node-telegram-bot.
+Хотя проделал следующее:
+1. устранил node core moduleerror https://www.alchemy.com/blog/how-to-polyfill-node-core-modules-in-webpack-5
+2. устранил Module not found: Error: Can't resolve 'fs','net', 'tls' 
+   https://bobbyhadz.com/blog/module-not-found-cant-resolve-fs#:~:text=The%20error%20%22Module%20not%20found,json%20file.
+   https://bobbyhadz.com/blog/module-not-found-error-cant-resolve-tls
+3. Уперся в "Cannot read properties of undefined (reading 'split') in JS"  
+   https://bobbyhadz.com/blog/javascript-cannot-read-property-split-of-undefined
+************************************************
+https://core.telegram.org/bots/webapps
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+****************************************************
+После этого создал новую папку front_2 где  инициализировал npm, загрузил node-telegram-bot, создал файл index.js и запускаю его командой node index.js
+Бот заработал.
+Этот вариант рассматривался:https://www.youtube.com/watch?v=slcqnHIFrj8&t=0s
+Вот пример такого же решения: https://archakov.im/post/telegram-bot-on-nodejs
 
-### `npm test`
+Для стикеров:
+https://tlgrm.eu/stickers
+Но не каждый стикер открывается для получения ссылки
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+У telegram очень плдохо с документацией, поэтому перешел на telegraf(папка telegraf).Здесь несколько лучше, но тоже многое только на примерах(Markup)
+Вот ролики по telegraf:
+https://www.youtube.com/watch?v=IAG8-dnCdtg
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://telegrafjs.org/#/?id=introduction
+https://github.com/telegraf/telegraf/blob/3.38.0/docs/examples/keyboard-bot.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Коды эмодзи здесь:
+https://st-lt.ru/blog/emodzi-v-formate-html-v-chem-ix-seo-preimushhestvo.html
+http://as3coder.blogspot.com/2014/08/emoji.html
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+ об require и import look https://www.freecodecamp.org/news/how-to-use-the-javascript-require-function/
+ https://www.sitepoint.com/understanding-module-exports-exports-node-js/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+about env  and dotenv in node look:
+ https://nodejs.dev/en/learn/how-to-read-environment-variables-from-nodejs/
