@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import Header from './Components/Header/header.jsx';
 
 import './App.css';
 const tg = window.Telegram.WebApp
@@ -11,8 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      HELLO!
-      <button onClick={onClose}>Close</button>>
+      <Header onClose = {onClose} username = {tg.initDataUnsafe?.user?.username}/>
+
     </div>
   );
 }
