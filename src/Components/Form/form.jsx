@@ -5,6 +5,8 @@ import './form.css';
 
 export function Form(props){
 
+	const {tg} = useTelegram()
+
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [status, setStatus] = useState('')
@@ -22,15 +24,15 @@ export function Form(props){
 	}
 
     useEffect(() => {
-    	useTelegram.tg.MainButton.setParams({
+    	tg.MainButton.setParams({
     		text: 'send data'
     	})
         
     }, [])
 
 	useEffect(() => {
-		if(!name || !email) useTelegram.tg.MainButton.hide()
-	    else useTelegram.tg.MainButton.show()
+		if(!name || !email) tg.MainButton.hide()
+	    else tg.MainButton.show()
 	        
 	    }, [name,email])
 
