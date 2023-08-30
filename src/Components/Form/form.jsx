@@ -28,13 +28,13 @@ export function Form(props){
     		text: 'send data'
     	})
         
-    }, [])
+    })
 
 	useEffect(() => {
 		if(!name || !email) tg.MainButton.hide()
 	    else tg.MainButton.show()
 	        
-	    }, [name,email])
+	    }, [name,email,tg.MainButton])
 
 	return(
 		<div className = {'formContainer'}>
