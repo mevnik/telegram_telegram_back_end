@@ -23,10 +23,25 @@ export function Form(props){
 		setStatus(e.target.value)
 	}
 
-    useEffect(() => {
+	const onSendData = (e) => {
+		const data = {
+			name,
+			email,
+			status
+		}
+		tg.sendData(JSON.strigify(data))
+	}
+
+	useEffect(() => {
     	tg.MainButton.setParams({
     		text: 'send data'
     	})
+        
+    })
+
+    useEffect(() => {
+    	tg.onEvent('mainButtonClicked', onSendData)
+    	return tg.MainButton.offEvent('mainButtonClicked', onSendData) //???
         
     })
 
