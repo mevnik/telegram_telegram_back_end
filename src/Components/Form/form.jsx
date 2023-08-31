@@ -22,7 +22,7 @@ export function Form(props){
 	const onChangeStatus = (e) => {
 		setStatus(e.target.value)
 	}
-
+/*
 	const onSendData = (e) => {
 		console.log('vot')
 		const data = {
@@ -32,7 +32,7 @@ export function Form(props){
 		}
 		tg.sendData(JSON.strigify(data))
 	}
-
+*/
 	useEffect(() => {
     	tg.MainButton.setParams({
     		text: 'send data'
