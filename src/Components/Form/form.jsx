@@ -32,7 +32,7 @@ export function Form(props){
 		}
 		tg.MainButton.hide()
 		tg.sendData(JSON.strigify(data))
-	},[])
+	},[name,email,status,tg])
 
 	useEffect(() => {
     	tg.MainButton.setParams({
@@ -47,7 +47,7 @@ export function Form(props){
     		tg.offEvent('mainButtonClicked', onSendData)
     	}
         
-    },[])
+    },[tg,onSendData])
 
 	useEffect(() => {
 		if(!name || !email) tg.MainButton.hide()
