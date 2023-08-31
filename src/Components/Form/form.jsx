@@ -43,7 +43,7 @@ export function Form(props){
     useEffect(() => {
     	tg.onEvent('mainButtonClicked', onSendData)
     	return () => {
-    		tg.MainButton.offEvent('mainButtonClicked', onSendData)
+    		tg.offEvent('mainButtonClicked', onSendData)
     	}
         
     })
