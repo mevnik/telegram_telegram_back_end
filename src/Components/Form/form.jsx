@@ -31,7 +31,7 @@ export function Form(props){
 			status
 		}
 //		tg.MainButton.hide()
-		tg.sendData(JSON.stringify(data))
+		tg.sendData('wer')
 		setInfo('send data' + data.name)
 	},[name,email,status,tg])
 
