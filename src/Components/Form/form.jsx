@@ -39,13 +39,13 @@ export function Form(props){
     	})
         
     })
-/*
+
     useEffect(() => {
     	tg.onEvent('mainButtonClicked', onSendData)
     	//return tg.MainButton.offEvent('mainButtonClicked', onSendData) //???
         
     })
-*/
+
 	useEffect(() => {
 		if(!name || !email) tg.MainButton.hide()
 	    else tg.MainButton.show()
