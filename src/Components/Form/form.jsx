@@ -25,12 +25,12 @@ export function Form(props){
 	}
 
 	const onSendData = useCallback(() => {
-		setInfo('send data')
 		const data = {
 			name,
 			email,
 			status
 		}
+		setInfo('send data' + data.name)
 		tg.MainButton.hide()
 		tg.sendData(JSON.stringify(data))
 	},[name,email,status,tg])
