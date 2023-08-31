@@ -32,7 +32,7 @@ export function Form(props){
 			status
 		}
 		tg.MainButton.hide()
-		tg.sendData(JSON.strigify(data))
+		tg.sendData(JSON.stringify(data))
 	},[name,email,status,tg])
 
 	useEffect(() => {
