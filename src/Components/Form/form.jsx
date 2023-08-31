@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState ,useCallback} from 'react';
 import {useTelegram} from '../../Hooks/useTelegram.jsx'
 import './form.css';
 
@@ -23,7 +23,7 @@ export function Form(props){
 		setStatus(e.target.value)
 	}
 
-	const onSendData = (e) => {
+	const onSendData = useCallback(() => {
 		console.log('vot')
 		const data = {
 			name,
@@ -31,7 +31,7 @@ export function Form(props){
 			status
 		}
 		tg.sendData(JSON.strigify(data))
-	}
+	},[])
 
 	useEffect(() => {
     	tg.MainButton.setParams({
@@ -46,7 +46,7 @@ export function Form(props){
     		tg.offEvent('mainButtonClicked', onSendData)
     	}
         
-    })
+    },[])
 
 	useEffect(() => {
 		if(!name || !email) tg.MainButton.hide()
