@@ -10,6 +10,7 @@ export function Form(props){
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [status, setStatus] = useState('')
+	const [info, setInfo] = useState('')
 
 	const onChangeName = (e) => {
 		setName(e.target.value)
@@ -24,7 +25,7 @@ export function Form(props){
 	}
 
 	const onSendData = useCallback(() => {
-		console.log('vot colback')
+		setInfo('send data')
 		const data = {
 			name,
 			email,
@@ -57,6 +58,7 @@ export function Form(props){
 
 	return(
 		<div className = {'formContainer'}>
+		<p>info:{info}</p>
 		<form className = {'form'} action="#" method="post">
 			<label>Put in form</label>
 			<input type="text" placeholder = 'your name' name = 'user name' value = {name} onChange={onChangeName}/>
