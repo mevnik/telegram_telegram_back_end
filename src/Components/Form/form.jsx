@@ -24,12 +24,13 @@ export function Form(props){
 	}
 
 	const onSendData = useCallback(() => {
-		console.log('vot')
+		console.log('vot colback')
 		const data = {
 			name,
 			email,
 			status
 		}
+		tg.MainButton.hide()
 		tg.sendData(JSON.strigify(data))
 	},[])
 
