@@ -34,9 +34,7 @@ export const ProductList = () => {
     },[tg,onSendData])
 
 
-    const toBasket = () => {
-    	tg.MainButton.show()
-    }
+    
 
     /*
 
