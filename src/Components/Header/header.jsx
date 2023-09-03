@@ -7,7 +7,7 @@ const Header = (props) => {
 	return (
 		<div className={`header`}>
 
-			<Button onClose = {props.onClose} text = 'close'/>
+			<Button onClick = {props.onClick} text = 'close'/>
 			<span className={`userename`}>{props.username}</span>
 		</div>
 		)

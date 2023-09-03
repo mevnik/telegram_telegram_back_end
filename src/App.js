@@ -14,7 +14,7 @@ const {name,onClose,tg,onToggleButton} = useTelegram()
 
   return (
     <div className="App">
-      <Header onClose = {onClose} username = {username}/>
+      <Header onClick = {onClose} username = {username}/>
       <button onClick = {onToggleButton}>toggle</button>
     </div>
   );
