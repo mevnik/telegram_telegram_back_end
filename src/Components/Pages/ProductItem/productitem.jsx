@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useContext,useState, createContext}from 'react'
 import './productitem.css'
 
 
 
 export const Item = (props) => {
+
+	const [click,setClick] = useState(1)
+
+
+	const onBy = () => {
+		setClick(click + 1)
+		props.editPrice(props.price)
+	}
+
 
 	return (
 		<div className = {'Container'}>
@@ -19,13 +28,19 @@ export const Item = (props) => {
 
 
 				<div className = {'Price'}>
-					<p>{props.price}</p>
+					<p>Price:{props.price}$</p>
 				</div>
 
 
 				<div className = {'img'}>
-					<img className = {'img'} src = {props.img} alt = "vot"/>
+					<button type = 'button' className = {'btn'} onClick = {onBy}><img className = {'img'} src = {props.img} alt = "vot" /></button>
 				</div>
+
+				<div className = {'Basket'}>
+					<p>In Your basket:{click}</p>
+					<p>Full price:{props.price}</p>
+				</div>
+
 			</div>
 				
 		</div>

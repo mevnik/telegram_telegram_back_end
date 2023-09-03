@@ -10,13 +10,13 @@ import pc09 from'../images/pc09.png'
 
 
 export const Products = [
-	{"id": "1",title: "product#1","description": "product#1", "price":"100$", "img":pc01},
-	{"id": "2","title": "product#1","description": "product#1", "price":"100$", "img":pc02},
-	{"id": "3","title": "product#1","description": "product#1", "price":"100$", "img":pc03},
-	{"id": "4","title": "product#1","description": "product#1", "price":"100$", "img":pc04},
-	{"id": "5","title": "product#1","description": "product#1", "price":"100$", "img":pc05},
-	{"id": "6","title": "product#1","description": "product#1", "price":"100$", "img":pc06},
-	{"id": "7","title": "product#1","description": "product#1", "price":"100$", "img":pc07},
-	{"id": "8","title": "product#1","description": "product#1", "price":"100$", "img":pc08},
-	{"id": "9","title": "product#1","description": "product#1", "price":"100$", "img":pc09}
+	{"id": "1",title: "product#1","description": "product#1", "price":100, "img":pc01},
+	{"id": "2","title": "product#1","description": "product#1", "price":110, "img":pc02},
+	{"id": "3","title": "product#1","description": "product#1", "price":120, "img":pc03},
+	{"id": "4","title": "product#1","description": "product#1", "price":130, "img":pc04},
+	{"id": "5","title": "product#1","description": "product#1", "price":140, "img":pc05},
+	{"id": "6","title": "product#1","description": "product#1", "price":150, "img":pc06},
+	{"id": "7","title": "product#1","description": "product#1", "price":160, "img":pc07},
+	{"id": "8","title": "product#1","description": "product#1", "price":170, "img":pc08},
+	{"id": "9","title": "product#1","description": "product#1", "price":180, "img":pc09}
 ]

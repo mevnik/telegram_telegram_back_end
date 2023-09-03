@@ -1,4 +1,12 @@
 .listContainer{
+	border: 1px solid red;
 	display: flex;
 	flex-wrap:wrap;
+}
+
+.Item{
+	border: 1px solid blue;
+	margin: 20px 20px;
+
+
 }
