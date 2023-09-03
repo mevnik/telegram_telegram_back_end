@@ -1,12 +1,44 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import './productList.css'
 import {Item} from '../ProductItem/productitem.jsx'
 import {Products} from '../../../ShopData/Store.jsx'
 import Button from '../../Button/button.jsx';
+import {useTelegram} from '../../../Hooks/useTelegram.jsx'
+
+
 
 
 
 export const ProductList = () => {
+
+	const {tg} = useTelegram()
+
+    const onSendData = useCallback(() => {
+    	console.log('vot')
+    },[])
+
+ 	useEffect(() => {
+    	tg.onEvent('mainButtonClicked', onSendData)
+    	return () => {
+    		tg.offEvent('mainButtonClicked', onSendData)
+    	}
+        
+    },[tg,onSendData])
+
+
+    const toBasket = () => {
+    	tg.MainButton.show()
+    }
+
+    /*
+
+	useEffect(() => {
+		if(!name || !email) tg.MainButton.hide()
+	    else tg.MainButton.show()
+	        
+	    }, [name,email,tg.MainButton])
+
+	    */
 
 	const[all_price, setAll_price] = useState(0)
 	const editPrice = (value) => {
@@ -30,7 +62,7 @@ export const ProductList = () => {
 					}
 				</div>
 				<div className = {'Item'}>Sum in basket:{all_price}$</div>
-				<Button ></Button>
+				<Button onClick={toBasket} text = 'Go to basket'/>
 
 			</div>
 
