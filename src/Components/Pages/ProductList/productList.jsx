@@ -1,4 +1,4 @@
-import React, {useState, useContext, createContext} from 'react'
+import React, {useState} from 'react'
 import './productList.css'
 import {Item} from '../ProductItem/productitem.jsx'
 import {Products} from '../../../ShopData/Store.jsx'
@@ -11,10 +11,6 @@ export const ProductList = () => {
 	const[all_price, setAll_price] = useState(0)
 	const editPrice = (value) => {
 			setAll_price(all_price + value)
-	}
-
-	const onPay = () => {
-
 	}
 
 	return(
@@ -34,7 +30,7 @@ export const ProductList = () => {
 					}
 				</div>
 				<div className = {'Item'}>Sum in basket:{all_price}$</div>
-				<Button onPay = {onPay}></Button>
+				<Button ></Button>
 
 			</div>
 
