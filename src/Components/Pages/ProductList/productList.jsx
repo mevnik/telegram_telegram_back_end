@@ -17,6 +17,14 @@ export const ProductList = () => {
     	console.log('vot')
     },[])
 
+	useEffect(() => {
+    	tg.MainButton.setParams({
+    		text: 'go to basket'
+    	})
+        
+    })
+
+
  	useEffect(() => {
     	tg.onEvent('mainButtonClicked', onSendData)
     	return () => {
