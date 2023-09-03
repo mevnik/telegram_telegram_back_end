@@ -11,7 +11,7 @@ import {useTelegram} from '../../../Hooks/useTelegram.jsx'
 
 export const ProductList = () => {
 
-	const {tg} = useTelegram()
+	const {tg, onToggleButton} = useTelegram()
 
     const onSendData = useCallback(() => {
     	console.log('vot')
@@ -70,7 +70,7 @@ export const ProductList = () => {
 					}
 				</div>
 				<div className = {'Item'}>Sum in basket:{all_price}$</div>
-				<Button onClick={toBasket} text = 'Go to basket'/>
+				<Button onClick={onToggleButton} text = 'Go to basket'/>
 
 			</div>
 
