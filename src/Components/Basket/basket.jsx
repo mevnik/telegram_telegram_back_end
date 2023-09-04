@@ -10,7 +10,12 @@ export const Basket = (props) => {
 			<p>It's basket</p>
 			<p>{props.count}</p>
 
-<Purchase count = {props.count}/>
+
+
+
+			<Purchase count = {props.count} basket = {props.basket} />
+
+
 
 		</div>
 
