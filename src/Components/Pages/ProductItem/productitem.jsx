@@ -40,6 +40,7 @@ export const Item = (props) => {
 					<p>In Your basket:{click}</p>
 					<p>Full price:{props.price}</p>
 					<p>id:{props.id}</p>
+					<p>click:{click}</p>
 				</div>
 
 			</div>
