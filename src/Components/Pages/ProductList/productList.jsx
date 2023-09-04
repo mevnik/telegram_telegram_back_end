@@ -47,8 +47,10 @@ export const ProductList = () => {
 	    */
 
 	const[all_price, setAll_price] = useState(0)
+
 	const editPrice = (value) => {
 			setAll_price(all_price + value)
+			onToggleButton()
 	}
 
 	return(
@@ -68,7 +70,6 @@ export const ProductList = () => {
 					}
 				</div>
 				<div className = {'Item'}>Sum in basket:{all_price}$</div>
-				<Button onClick={onToggleButton} text = 'Go to basket'/>
 
 			</div>
 
