@@ -11,7 +11,7 @@ export const Basket = (props) => {
 
 			{props.basket.map((product) =>
 
-			<Purchase key = {product.id} product = {product.click} />
+			<Purchase key = {product.id} product = {product} />
 
 			)}
 
