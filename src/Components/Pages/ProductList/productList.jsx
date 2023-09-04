@@ -2,7 +2,6 @@ import React, {useState, useEffect, useCallback} from 'react'
 import './productList.css'
 import {Item} from '../ProductItem/productitem.jsx'
 import {Products} from '../../../ShopData/Store.jsx'
-import Button from '../../Button/button.jsx';
 import {useTelegram} from '../../../Hooks/useTelegram.jsx'
 
 
