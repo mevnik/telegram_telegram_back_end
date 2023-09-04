@@ -10,16 +10,8 @@ export const Basket = (props) => {
 			<p>It's basket</p>
 			<p>{props.count}</p>
 
+<Purchase count = {props.count}/>
 
-			{ props.basket.map((item) => 
-
-				<Purchase
-					key={item.id}
-					id = {item.id}
-					count = {5}
-				/>
-			)
-			}
 		</div>
 
 		)
