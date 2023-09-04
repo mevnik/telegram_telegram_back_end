@@ -48,8 +48,8 @@ export const ProductList = () => {
 	const[all_price, setAll_price] = useState(0)
 
 	const editPrice = (value) => {
+			if(all_price === 0) onToggleButton()
 			setAll_price(all_price + value)
-			onToggleButton()
 	}
 
 	return(
