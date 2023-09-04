@@ -2,6 +2,13 @@
 	border: 1px solid red;
 	display: flex;
 	flex-wrap:wrap;
+	
+}
+
+.shop{
+	border: 1px solid green;
+	display: flex;
+	flex-wrap:wrap;
 }
 
 .sum{

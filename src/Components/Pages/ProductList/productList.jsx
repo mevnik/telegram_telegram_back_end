@@ -49,13 +49,13 @@ export const ProductList = () => {
 	const[all_price, setAll_price] = useState(0)
 	const[basket, setBasket] = useState([])
 	const[show_basket, setShow_basket] = useState(false)
-	let basket_buf = basket
+	let basket_buf = []
 
-	const editPrice = (price,id) => {
+	const editPrice = (click,product_id) => {
 			if(all_price === 0) onToggleButton()
-			setAll_price(all_price + price)
-		basket_buf.push(id)
-		setBasket(basket_buf)
+			setAll_price(all_price + Products.find( (item) => item.id === product_id).product.price)
+			basket_buf.push({product_id,click})
+			setBasket(basket_buf)
 
 	}
 
@@ -72,37 +72,35 @@ export const ProductList = () => {
         
     },[tg],goBasket)
 
-	if(!show_basket){
+	if(!show_basket)
 		return(
 
-				<div>
+				<div className="listContainer">
+					<div className="shop">
 
-
-					<div className="listContainer">
 						{
-							Products.map((item) => 
-								<Item key = {item.id} 
-								id = {item.id}
-								title = {item.product.title} 
-								description = {item.product.description}
-								 price = {item.product.price} 
-								 img = {item.product.img}
-								 editPrice = {editPrice}
-								 />
+								Products.map((item) => 
+									<Item key = {item.id} 
+									id = {item.id}
+									title = {item.product.title} 
+									description = {item.product.description}
+									 price = {item.product.price} 
+									 img = {item.product.img}
+									 editPrice = {editPrice}
+									 />
 							)
 						}
 					</div>
 					<div className = {'sum'}>Sum in basket:{all_price}$</div>
 				</div>
 
-
 			)
-		}
+		
 				
 
 		return (
-			<div>
-				<Basket basket = {basket}/>
+			<div className="listContainer">
+				<Basket basket = {basket} />
 			</div>
 			)
 

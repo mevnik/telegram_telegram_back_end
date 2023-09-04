@@ -10,7 +10,7 @@ export const Item = (props) => {
 
 	const onBy = () => {
 		setClick(click + 1)
-		props.editPrice(props.price, props.id)
+		props.editPrice(click, props.id)
 	}
 
 
