@@ -7,7 +7,7 @@ export const Purchase = (props) => {
 	return (
 		<div className = {'container'}>
 			<div className = {'purchase'}>
-				<div className = {'count'}>{props.product}</div>
+				<div className = {'count'}>product:{props.product}</div>
 			</div>
 		</div>
 
