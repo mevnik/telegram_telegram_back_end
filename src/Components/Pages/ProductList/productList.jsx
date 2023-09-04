@@ -3,6 +3,7 @@ import './productList.css'
 import {Item} from '../ProductItem/productitem.jsx'
 import {Products} from '../../../ShopData/Store.jsx'
 import {useTelegram} from '../../../Hooks/useTelegram.jsx'
+import {Basket} from '../../Basket/basket.jsx'
 
 
 
@@ -46,15 +47,18 @@ export const ProductList = () => {
 	    */
 
 	const[all_price, setAll_price] = useState(0)
-	const[basket, setBasket] = useState(false)
+	const[basket, setBasket] = useState([])
+	const[show_basket, setShow_basket] = useState(false)
 
-	const editPrice = (value) => {
+	const editPrice = (price,id) => {
 			if(all_price === 0) onToggleButton()
-			setAll_price(all_price + value)
+			setAll_price(all_price + price)
+		setBasket(basket.push(id))
+
 	}
 
 	const goBasket = () => {
-		setBasket(true)
+		setShow_basket(true)
 
 	}
 
@@ -64,9 +68,9 @@ export const ProductList = () => {
     		tg.offEvent('mainButtonClicked', goBasket)
     	}
         
-    },[tg])
+    },[tg],goBasket)
 
-	if(!basket){
+	if(!show_basket){
 		return(
 
 				<div>
@@ -76,16 +80,17 @@ export const ProductList = () => {
 						{
 							Products.map((item) => 
 								<Item key = {item.id} 
-								title = {item.title} 
-								description = {item.description}
-								 price = {item.price} 
-								 img = {item.img}
+								id = {item.id}
+								title = {item.product.title} 
+								description = {item.product.description}
+								 price = {item.product.price} 
+								 img = {item.product.img}
 								 editPrice = {editPrice}
 								 />
 							)
 						}
 					</div>
-					<div className = {'Item'}>Sum in basket:{all_price}$</div>
+					<div className = {'sum'}>Sum in basket:{all_price}$</div>
 				</div>
 
 
@@ -94,7 +99,9 @@ export const ProductList = () => {
 				
 
 		return (
-			<div>It's basket</div>
+			<div>
+				<Basket basket = {basket} count = {1}/>
+			</div>
 			)
 
 	}
