@@ -9,7 +9,7 @@ export const Basket = (props) => {
 		<div className = {'container'}>
 			<p>It's basket</p>
 			<p>props.count</p>
-			<p>props.basket[0]</p>
+
 
 			{ props.basket.map((item) => 
 
