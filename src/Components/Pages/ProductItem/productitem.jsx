@@ -39,6 +39,7 @@ export const Item = (props) => {
 				<div className = {'Basket'}>
 					<p>In Your basket:{click}</p>
 					<p>Full price:{props.price}</p>
+					<p>id:{props.id}</p>
 				</div>
 
 			</div>

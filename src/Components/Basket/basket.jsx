@@ -13,7 +13,7 @@ export const Basket = (props) => {
 
 
 
-			<Purchase count = {props.count} basket = {props.basket} />
+			<Purchase basket = {props.basket[props.basket.length - 1]} />
 
 
 

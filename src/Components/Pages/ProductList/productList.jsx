@@ -49,11 +49,13 @@ export const ProductList = () => {
 	const[all_price, setAll_price] = useState(0)
 	const[basket, setBasket] = useState([])
 	const[show_basket, setShow_basket] = useState(false)
+	let basket_buf = basket
 
 	const editPrice = (price,id) => {
 			if(all_price === 0) onToggleButton()
 			setAll_price(all_price + price)
-		setBasket(basket.push(id))
+		basket_buf.push(id)
+		setBasket(basket_buf)
 
 	}
 
@@ -100,7 +102,7 @@ export const ProductList = () => {
 
 		return (
 			<div>
-				<Basket basket = {basket} count = {1}/>
+				<Basket basket = {basket}/>
 			</div>
 			)
 
