@@ -1,5 +1,5 @@
 import React from 'react'
-import {Products} from '../../ShopData/Store.jsx'
+//import {Products} from '../../ShopData/Store.jsx'
 
 
 export const Purchase = (props) => {
