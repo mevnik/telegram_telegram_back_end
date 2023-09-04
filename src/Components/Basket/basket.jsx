@@ -7,6 +7,7 @@ export const Basket = (props) => {
 
 	return (
 		<div className = {'container'}>
+		<p>It's basket</p>
 		{ props.basket.map((item) => 
 
 			<Purchase
