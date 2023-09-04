@@ -10,10 +10,13 @@ export const Basket = (props) => {
 			<p>It's basket</p>
 			<p>{props.count}</p>
 
+			{props.basket.map((product) =>
+
+			<Purchase key = {product.id} product = {product} />
+
+			)}
 
 
-
-			<Purchase basket = {props.basket[props.basket.length - 1]} />
 
 
 
