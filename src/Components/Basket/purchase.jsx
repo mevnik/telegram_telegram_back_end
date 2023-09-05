@@ -4,8 +4,9 @@ import {Products} from '../../ShopData/Store.jsx'
 
 
 export const Purchase = (props) => {
-	const product = Products.find((item) => item.id === props.product_id)
+	const product = Products.find((item) => item.id === props.product.product_id).product
 
+/*
 	return (
 		<div className = {'container'}>
 			<div className = {'purchase'}>
@@ -18,8 +19,8 @@ export const Purchase = (props) => {
 		</div>
 
 		)
+		*/
 
-/*
 	return (
 		<div className = {'container'}>
 			<div className = {'purchase'}>
@@ -32,5 +33,4 @@ export const Purchase = (props) => {
 		</div>
 
 		)
-		*/
 }

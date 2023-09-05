@@ -59,6 +59,7 @@ export const ProductList = () => {
 			basket_buf.push({product_id,click})
 			setBasket(basket_buf)
 
+
 	}
 
 
