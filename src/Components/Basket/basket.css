@@ -1,0 +1,13 @@
+.purchase{
+	display: flex;
+	flex-direction: row;
+}
+.result{
+	display: flex;
+	flex-direction: column
+}
+
+.block_mini{
+	background: #f5f;
+	border: 1px solid #ccc;;
+}
