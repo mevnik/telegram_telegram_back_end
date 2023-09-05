@@ -1,14 +1,21 @@
 .listContainer{
+	width: 100%;
+	height:100%;
 	border: 1px solid red;
 	display: flex;
 	flex-wrap:wrap;
+	justify-content: center;
 	
 }
 
 .shop{
 	border: 1px solid green;
+	width: 100%;
+	height:100%;
 	display: flex;
 	flex-wrap:wrap;
+	justify-content: center;
+	
 }
 
 .sum{

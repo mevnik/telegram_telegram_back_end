@@ -58,7 +58,7 @@ export const ProductList = () => {
 			basket_buf = basket.filter( (item) => item.product_id!== product_id)
 			basket_buf.push({product_id,click})
 			setBasket(basket_buf)
-
+			if(click>3) setShow_basket(true)
 
 	}
 
@@ -104,7 +104,9 @@ export const ProductList = () => {
 
 		return (
 			<div className="listContainer">
-				<Basket basket = {basket} />
+				<div className="shop">
+					<Basket basket = {basket} />
+				</div>
 			</div>
 			)
 

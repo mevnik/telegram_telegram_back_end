@@ -6,8 +6,8 @@ import './basket.css'
 export const Basket = (props) => {
 
 	return (
-		<div className = {'container'}>
-			<p>It's basket</p>
+		<div className = {'container_basket'}>
+			<p>In Your basket</p>
 
 			{props.basket.map((product) =>
 

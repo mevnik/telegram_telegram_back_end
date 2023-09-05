@@ -32,8 +32,8 @@ export const Item = (props) => {
 				</div>
 
 
-				<div className = {'img'}>
-					<button type = 'button' className = {'btn'} onClick = {onBy}><img className = {'img'} src = {props.img} alt = "vot" /></button>
+				<div className = {'img_item'}>
+					<button type = 'button' className = {'btn'} onClick = {onBy}><img className = {'img_item'} src = {props.img} alt = "vot" /></button>
 				</div>
 
 				<div className = {'Basket'}>

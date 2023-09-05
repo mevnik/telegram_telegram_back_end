@@ -22,9 +22,9 @@ export const Purchase = (props) => {
 		*/
 
 	return (
-		<div className = {'container'}>
+		<div className = {'container_purchase'}>
 			<div className = {'purchase'}>
-				<div className = {'img'}><img src = {product.img} alt = 'purchase'/></div>
+				<div ><img className = {'img_basket'} src = {product.img} alt = 'purchase'/></div>
 				<div className = {'result'}>
 					<div className = {'block_mini'}>Price:{product.price}</div>
 					<div className = {'block_mini'}>Sum:{ product.price * props.product.click}</div>
