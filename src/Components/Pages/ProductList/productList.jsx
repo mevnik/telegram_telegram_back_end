@@ -55,7 +55,7 @@ export const ProductList = () => {
 	const editPrice = (click,product_id) => {
 			if(all_price === 0) onToggleButton()
 			setAll_price(all_price + Products.find( (item) => item.id === product_id).product.price)
-			basket_buf = basket
+			basket_buf = basket.filter( (item) => item.id === product_id)
 			basket_buf.push({product_id,click})
 			setBasket(basket_buf)
 
