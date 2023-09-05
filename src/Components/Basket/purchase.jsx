@@ -1,17 +1,17 @@
 import React from 'react'
 import './basket.css'
-import {Products} from '../../ShopData/Store.jsx'
+//import {Products} from '../../ShopData/Store.jsx'
 
 
 export const Purchase = (props) => {
-	const product = Products.find((item) => item.id === props.product_id)
+	//const product = Products.find((item) => item.id === props.product_id)
 
 	return (
 		<div className = {'container'}>
 			<div className = {'purchase'}>
 				<div className = {'img'}>eee</div>
 				<div className = {'result'}>
-					<div className = {'block_mini'}>Price:{product.product.price}</div>
+					<div className = {'block_mini'}>321</div>
 					<div className = {'block_mini'}>Sum:123</div>
 				</div>
 			</div>
