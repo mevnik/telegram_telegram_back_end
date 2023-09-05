@@ -9,5 +9,9 @@
 
 .block_mini{
 	background: #f5f;
-	border: 1px solid #ccc;;
+	border: 1px solid #ccc;
+}
+.img{
+	border: 1px solid black;
+
 }

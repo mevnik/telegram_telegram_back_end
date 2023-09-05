@@ -9,7 +9,7 @@ export const Purchase = (props) => {
 	return (
 		<div className = {'container'}>
 			<div className = {'purchase'}>
-				<div className = >eee</div>
+				<div className = {'img'}>eee</div>
 				<div className = {'result'}>
 					<div className = {'block_mini'}>Price:{product.product.price}</div>
 					<div className = {'block_mini'}>Sum:123</div>
