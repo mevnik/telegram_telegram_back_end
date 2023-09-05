@@ -11,7 +11,7 @@ export const Purchase = (props) => {
 			<div className = {'purchase'}>
 				<div className = {'img'}>eee</div>
 				<div className = {'result'}>
-					<div className = {'block_mini'}>product.product.price</div>
+					<div className = {'block_mini'}>{product.product.price}</div>
 					<div className = {'block_mini'}>Sum:123</div>
 				</div>
 			</div>
