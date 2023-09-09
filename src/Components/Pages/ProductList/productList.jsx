@@ -52,19 +52,38 @@ export const ProductList = () => {
 
 			let basket_buf
 
-	const editPrice = (click,product_id) => {
+	const editBasket = (click,product_id) => {
 			if(all_price === 0) onToggleButton()
-			setAll_price(all_price + Products.find( (item) => item.id === product_id).product.price)
 			basket_buf = basket.filter( (item) => item.product_id!== product_id)
 			basket_buf.push({product_id,click})
 			setBasket(basket_buf)
+			setAll_price(all_price + Products.find( (item) => item.id === product_id).product.price)
 			if(click>3) setShow_basket(true)
 
 	}
-
-
+/*
+	useEffect(() => {
+		editBasket()
+	},[basket])
+*/
 	const goBasket = () => {
 		setShow_basket(true)
+
+	}
+
+	const goBack = () => {
+		setShow_basket(false)
+	}
+
+	const editPurchase = (product_id, click) => {
+		const buf = basket
+		const item_to_edit = buf.find( (item) => item.id === product_id)
+		const index_item_to_edit = buf.indexOf(item_to_edit)
+		buf.splice(index_item_to_edit,1)
+		buf.push({product_id,click})
+		setBasket(buf)
+		editBasket(click,product_id)
+
 
 	}
 
@@ -90,7 +109,8 @@ export const ProductList = () => {
 									description = {item.product.description}
 									 price = {item.product.price} 
 									 img = {item.product.img}
-									 editPrice = {editPrice}
+									 basket = {basket}
+									 editBasket = {editBasket}
 									 />
 							)
 						}
@@ -105,7 +125,7 @@ export const ProductList = () => {
 		return (
 			<div className="listContainer">
 				<div className="shop">
-					<Basket basket = {basket} />
+					<Basket basket = {basket} onClick = {goBack} onEdit = {editPurchase}/>
 				</div>
 			</div>
 			)

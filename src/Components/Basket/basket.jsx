@@ -1,19 +1,48 @@
-import React from 'react'
+import React, {useState, useCallback} from 'react'
 import {Purchase} from './purchase'
+import Button from '../Button/button.jsx'
 import './basket.css'
+import {useTelegram} from '../../Hooks/useTelegram.jsx'
+
 
 
 export const Basket = (props) => {
+const[id,setId] = useState(0)
+
+const onClick = (id,count) => {
+	setId(count)
+	props.onEdit(id,count)
+
+
+}
+	const {tg} = useTelegram()
+
+
+const onSendData = useCallback(() => {
+		const data = {
+			name: "try send info"
+		}
+//		tg.MainButton.hide()
+		tg.sendData(JSON.stringify(data))
+	},[tg])
 
 	return (
 		<div className = {'container_basket'}>
-			<p>In Your basket</p>
+		<div className = {'title_basket'}>
+			
+			<p>In Your basket{id}</p>
+			<Button onClick={props.onClick} text = 'back to shop'/>
+
+		</div>
 
 			{props.basket.map((product) =>
 
-			<Purchase key = {product.id} product = {product} />
+			<Purchase key = {product.id} product = {product} onClick = {onClick}/>
 
 			)}
+			<div className = {'bottom_basket'}>
+				<Button onClick={onSendData} text = 'buy'/>
+		</div>
 
 
 

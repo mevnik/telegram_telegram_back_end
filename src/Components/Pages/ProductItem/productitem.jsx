@@ -4,13 +4,14 @@ import './productitem.css'
 
 
 export const Item = (props) => {
+	const count = props.basket.find( (item) => item.product_id === props.id)?props.basket.find( (item) => item.product_id === props.id).click : 0
 
-	const [click,setClick] = useState(1)
+	const [click,setClick] = useState(count)
 
 
 	const onBy = () => {
 		setClick(click + 1)
-		props.editPrice(click, props.id)
+		props.editBasket(click + 1, props.id)
 	}
 
 
@@ -40,7 +41,7 @@ export const Item = (props) => {
 					<p>In Your basket:{click}</p>
 					<p>Full price:{props.price}</p>
 					<p>id:{props.id}</p>
-					<p>click:{click}</p>
+					<p>count in basket:{count}</p>
 				</div>
 
 			</div>

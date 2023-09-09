@@ -31,3 +31,15 @@
 width: 100px;
 height: 100px;
 }
+
+.title_basket{
+	display:flex;
+	flex-direction: row;
+	justify-content:space-between;
+}
+
+.purchase_edit{
+	display:flex;
+	flex-direction: row;
+	justify-content:center;
+}
