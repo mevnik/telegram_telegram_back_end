@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useCallback, useEffect} from 'react'
 import {Purchase} from './purchase'
 import Button from '../Button/button.jsx'
 import './basket.css'
@@ -25,6 +25,18 @@ const onSendData = useCallback(() => {
 //		tg.MainButton.hide()
 		tg.sendData(JSON.stringify(data))
 	},[tg])
+
+useEffect(() => {
+    	tg.MainButton.setParams({
+    		text: 'Buy!'
+    	})
+        
+    })
+
+    useEffect(() => {
+	    tg.MainButton.show()
+        
+    },[tg])
 
 	return (
 		<div className = {'container_basket'}>
