@@ -13,27 +13,10 @@ export const ProductList = () => {
 
 	const {tg, onToggleButton} = useTelegram()
 
-    const onSendData = useCallback(() => {
+
+const onBuy = useCallback(() => {
     	console.log('vot')
     },[])
-
-	useEffect(() => {
-    	tg.MainButton.setParams({
-    		text: 'go to basket'
-    	})
-        
-    })
-
-
- 	useEffect(() => {
-    	tg.onEvent('mainButtonClicked', onSendData)
-    	return () => {
-    		tg.offEvent('mainButtonClicked', onSendData)
-    	}
-        
-    },[tg,onSendData])
-
-
     
 
     /*
@@ -61,6 +44,38 @@ export const ProductList = () => {
 			if(click>3) setShow_basket(true)
 
 	}
+	useEffect(() => {
+		if(show_basket){
+			tg.MainButton.setParams({
+    		text: 'buy!'
+    	})
+		}
+		else{
+    	tg.MainButton.setParams({
+    		text: 'go to basket'
+    	})
+
+		}
+        
+    })
+
+
+ 	useEffect(() => {
+		if(show_basket){
+
+    	tg.onEvent('mainButtonClicked', onBuy)
+    	return () => {
+    		tg.offEvent('mainButtonClicked', onBuy)
+    	}
+ 		}
+ 		else{
+ 			tg.onEvent('mainButtonClicked', goBasket)
+    	return () => {
+    		tg.offEvent('mainButtonClicked', goBasket)
+    	}
+ 		}
+        
+    },[tg,show_basket,onBuy])
 /*
 	useEffect(() => {
 		editBasket()
@@ -87,13 +102,6 @@ export const ProductList = () => {
 
 	}
 
-	useEffect(() => {
-    	tg.onEvent('mainButtonClicked', goBasket)
-    	return () => {
-    		tg.offEvent('mainButtonClicked', goBasket)
-    	}
-        
-    },[tg],goBasket)
 
 	if(!show_basket)
 		return(

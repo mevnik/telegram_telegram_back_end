@@ -19,6 +19,7 @@ const onClick = (id,count) => {
 
 
 const onSendData = useCallback(() => {
+setId(5)
 		const data = {
 			name: "try send info"
 		}
@@ -26,14 +27,11 @@ const onSendData = useCallback(() => {
 		tg.sendData(JSON.stringify(data))
 	},[tg])
 
-useEffect(() => {
+
+    useEffect(() => {
     	tg.MainButton.setParams({
     		text: 'Buy!'
     	})
-        
-    })
-
-    useEffect(() => {
 	    tg.MainButton.show()
         
     },[tg])
