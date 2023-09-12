@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp
 
 
 const name = tg.initDataUnsafe?.user?.username;
-const query_id = tg.initDataUnsafe?.query_id?.query_id;
+const query_id = tg.initDataUnsafe?.query_id;
 
 const onClose = () => {
 	tg.close()
