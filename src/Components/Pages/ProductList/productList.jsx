@@ -11,23 +11,10 @@ import {Basket} from '../../Basket/basket.jsx'
 
 export const ProductList = () => {
 
-	const {tg, onToggleButton} = useTelegram()
+	const {tg, query_id, onToggleButton} = useTelegram()
 
 
-const onBuy = useCallback(() => {
-    	console.log('vot')
-    },[])
     
-
-    /*
-
-	useEffect(() => {
-		if(!name || !email) tg.MainButton.hide()
-	    else tg.MainButton.show()
-	        
-	    }, [name,email,tg.MainButton])
-
-	    */
 
 	const[all_price, setAll_price] = useState(0)
 	const[basket, setBasket] = useState([])
@@ -44,6 +31,23 @@ const onBuy = useCallback(() => {
 			if(click>3) setShow_basket(true)
 
 	}
+
+	const onBuy = useCallback(() => {
+	    	const data = {
+	    		basket: basket,
+	    		all_price: all_price,
+	    		query_id,
+	    	}
+
+	    	fetch('http://159.253.18.191:5000/web-api',{
+	    		method: 'POST',
+    			headers:{
+    				'Content-Type':'application/json',
+    			},
+    			body: JSON.stringify(data)
+	    	})
+	    },[basket,all_price,query_id])
+
 	useEffect(() => {
 		if(show_basket){
 			tg.MainButton.setParams({
