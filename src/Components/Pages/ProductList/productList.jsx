@@ -46,6 +46,8 @@ export const ProductList = () => {
     			},
     			body: JSON.stringify(data)
 	    	})
+		setShow_basket(false)
+	    	
 	    },[basket,all_price,query_id])
 
 	useEffect(() => {
