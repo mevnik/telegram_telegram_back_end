@@ -48,7 +48,7 @@ export const ProductList = () => {
 	    	})
 		setShow_basket(false)
 
-	    },[basket,all_price,query_id])
+	    },[all_price,query_id])
 
 	useEffect(() => {
 		if(show_basket){
