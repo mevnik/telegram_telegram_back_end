@@ -36,7 +36,7 @@ export const ProductList = () => {
 	    	const data = {
 	    		//basket: basket,
 	    		all_price: all_price,
-	    		query_id,
+	    		query_id: query_id,
 	    	}
 
 	    	fetch('http://159.253.18.191:8000/web-api',{
