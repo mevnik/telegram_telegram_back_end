@@ -27,11 +27,15 @@ const onSend = () => {
 
         fetch('http://159.253.18.191:8000/web-api',{
           method: 'POST',
+          mode: "cors",
           headers:{
             'Content-Type':'application/json',
           },
           body: JSON.stringify(data)
-        })
+        }).then(response => {
+        	return response.json()
+        }).then(data => setId(JSON.stringify(data))
+        )
 }
 
 /*
