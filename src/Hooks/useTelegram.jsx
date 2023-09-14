@@ -3,7 +3,6 @@ const tg = window.Telegram.WebApp
 
 
 const name = tg.initDataUnsafe?.user?.username;
-const query_id = tg.initDataUnsafe?.query_id;
 
 const onClose = () => {
 	tg.close()
@@ -21,6 +20,7 @@ export function useTelegram(){
 		onToggleButton,
 		onClose,
 		name,
-		query_id
+		query_id: tg.initDataUnsafe?.query_id
+
 	})
 }
