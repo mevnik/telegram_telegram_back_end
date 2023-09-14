@@ -34,7 +34,7 @@ export const ProductList = () => {
 
 	const onBuy = useCallback(() => {
 	    	const data = {
-	    		basket: basket,
+	    		//basket: basket,
 	    		all_price: all_price,
 	    		query_id,
 	    	}
