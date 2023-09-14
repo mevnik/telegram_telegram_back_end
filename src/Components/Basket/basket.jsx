@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Purchase} from './purchase'
 import Button from '../Button/button.jsx'
 import './basket.css'
@@ -34,7 +34,7 @@ const onSend = () => {
         })
 }
 
-
+/*
 const onSendData = useCallback(() => {
 setId(5)
 		const data = {
@@ -44,7 +44,7 @@ setId(5)
 		tg.sendData(JSON.stringify(data))
 	},[tg])
 
-
+*/
     useEffect(() => {
     	tg.MainButton.setParams({
     		text: 'Buy!'
