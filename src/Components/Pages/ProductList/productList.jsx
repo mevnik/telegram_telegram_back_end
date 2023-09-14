@@ -39,7 +39,7 @@ export const ProductList = () => {
 	    		query_id,
 	    	}
 
-	    	fetch('http://159.253.18.191:5000/web-api',{
+	    	fetch('http://159.253.18.191:8000/web-api',{
 	    		method: 'POST',
     			headers:{
     				'Content-Type':'application/json',
@@ -47,7 +47,7 @@ export const ProductList = () => {
     			body: JSON.stringify(data)
 	    	})
 		setShow_basket(false)
-	    	
+
 	    },[basket,all_price,query_id])
 
 	useEffect(() => {
