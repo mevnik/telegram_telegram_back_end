@@ -14,6 +14,7 @@ const onSend = () => {
         const data = {
           all_price: "555",
           query_id: "34",
+          name: "jon"
         }
 
         fetch('http://159.253.18.191:8000/web-api',{

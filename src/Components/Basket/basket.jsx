@@ -18,6 +18,23 @@ const onClick = (id,count) => {
 	const {tg} = useTelegram()
 
 
+const onSend = () => {
+        const data = {
+          all_price: "555",
+          query_id: "34",
+          name: "jon"
+        }
+
+        fetch('http://159.253.18.191:8000/web-api',{
+          method: 'POST',
+          headers:{
+            'Content-Type':'application/json',
+          },
+          body: JSON.stringify(data)
+        })
+}
+
+
 const onSendData = useCallback(() => {
 setId(5)
 		const data = {
@@ -51,7 +68,7 @@ setId(5)
 
 			)}
 			<div className = {'bottom_basket'}>
-				<Button onClick={onSendData} text = 'buy'/>
+				<Button onClick={onSend} text = 'buy'/>
 		</div>
 
 
