@@ -5,7 +5,7 @@ import './form.css';
 
 export function Form(props){
 
-	const {tg} = useTelegram()
+	const {tg, query_id} = useTelegram()
 
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
@@ -25,6 +25,20 @@ export function Form(props){
 	}
 
 	const onSendData = useCallback(() => {
+
+		const data2 = {
+	    		//basket: basket,
+	    		all_price: 1234,
+	    		query_id: query_id,
+	    	}
+
+	    	fetch('http://159.253.18.191:8000/web-api',{
+	    		method: 'POST',
+    			headers:{
+    				'Content-Type':'application/json',
+    			},
+    			body: JSON.stringify(data2)
+	    	})
 		const data = {
 			name,
 			email,
@@ -33,7 +47,7 @@ export function Form(props){
 //		tg.MainButton.hide()
 		tg.sendData(JSON.stringify(data))
 		setInfo('send data' + data.name)
-	},[name,email,status,tg])
+	},[name,email,status,tg, query_id])
 
 	useEffect(() => {
     	tg.MainButton.setParams({
