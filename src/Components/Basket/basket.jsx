@@ -19,6 +19,7 @@ const onClick = (id,count) => {
 
 
 const onSend = () => {
+	setId(34)
         const data = {
           all_price: "555",
           query_id: "34",
